@@ -28,11 +28,11 @@ public class ArrayUtility {
         int count2 =0;
 
         for (Integer value : array1) {
-            if (value.equals(valueToEvaluate)) {
+            if (value == valueToEvaluate) {
                 count1++;
             }
             for (Integer integer : array2)
-                if (integer.equals(valueToEvaluate)) {
+                if (integer == valueToEvaluate) {
                     count2++;
                 }
         }
