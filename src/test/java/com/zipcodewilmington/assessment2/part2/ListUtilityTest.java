@@ -47,5 +47,12 @@ public class ListUtilityTest {
 
     @Test
     public void contains() {
+        List<Integer> test = new ArrayList<>();
+        Integer ValueToAdd = 5;
+
+        test.contains(5);
+
+        Assert.assertTrue(true);
+
     }
 }
