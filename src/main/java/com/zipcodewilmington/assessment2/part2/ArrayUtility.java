@@ -17,14 +17,51 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        return null;
+        List<Integer> result = Arrays.asList(array);
+        Collections.rotate(result, index-1);
+        Integer [] outcome = result.toArray(new Integer[result.size()]);
+        return outcome;
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
-        return null;
+        int count1 = 0;
+        int count2 =0;
+
+        for (Integer value : array1) {
+            if (value.equals(valueToEvaluate)) {
+                count1++;
+            }
+            for (Integer integer : array2)
+                if (integer.equals(valueToEvaluate)) {
+                    count2++;
+                }
+        }
+        return count1 + count2;
     }
 
     public Integer mostCommon(Integer[] array) {
-        return null;
+        Arrays.sort(array);
+        int max = 1;
+        int tempCount;
+        int temp = 0;
+        Integer result = array[0];
+        int n = array.length;
+        for (int i = 0; i <= n-1 ; i++) {
+            temp = (Integer)array[i];
+            tempCount = 0;
+            for (int j = 1; j < n ; j++) {
+
+                if (temp == (Integer)array[j]){
+                    tempCount++;
+                }
+                if(tempCount > max){
+                    result = temp;
+                    max = (Integer)array[i-1];
+                }
+            }
+        }
+
+
+        return result;
     }
 }
